@@ -1,0 +1,55 @@
+{
+  "Workflows": [
+    {
+      "Path": null,
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [],
+      "ArgumentsSectionElementsOrder": null,
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "Process.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [
+        "dt_OpenQuotes&Sequence_1",
+        "dt_StatusColumn&Sequence_1",
+        "int_CurrentRowIndex&Sequence_72",
+        "OriginalRowIndex&Sequence_1",
+        "RcnDtSerialized&Sequence_1",
+        "ManuallyCompletedDT&Sequence_1",
+        "RcnIdsUniqueList&Sequence_1",
+        "AttemptedDT&Sequence_1",
+        "AttemptedDtSerialized&Sequence_1",
+        "IsAttempted&Sequence_1",
+        "IsManuallyCompleted&Sequence_1",
+        "FalseDT&Sequence_1",
+        "ColumnToUpdateLetter&Sequence_1"
+      ],
+      "ArgumentsSectionElementsOrder": [
+        "in_Config"
+      ],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "Main.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [
+        "TransactionItem&StateMachine_1",
+        "SystemException&StateMachine_1",
+        "BusinessException&StateMachine_1",
+        "TransactionNumber&StateMachine_1",
+        "RetryNumber&StateMachine_1",
+        "TransactionID&StateMachine_1",
+        "Config&StateMachine_1",
+        "ShouldStop&Sequence_25"
+      ],
+      "ArgumentsSectionElementsOrder": [
+        "in_OrchestratorQueueName"
+      ],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    }
+  ]
+}
