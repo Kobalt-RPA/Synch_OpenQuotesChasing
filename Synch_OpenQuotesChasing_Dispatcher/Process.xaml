@@ -1,0 +1,404 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="Process" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:s="clr-namespace:System;assembly=System.Private.CoreLib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data.Common" xmlns:ug="clr-namespace:UiPath.GSuite;assembly=UiPath.GSuite" xmlns:uga="clr-namespace:UiPath.GSuite.Activities;assembly=UiPath.GSuite.Activities" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <x:Members>
+    <x:Property sap2010:Annotation.AnnotationText="Dictionary structure to store configuration data of the process (settings, constants and assets)." Name="in_Config" Type="InArgument(scg:Dictionary(x:String, x:Object))" />
+  </x:Members>
+  <VisualBasic.Settings>
+    <x:Null />
+  </VisualBasic.Settings>
+  <sap:VirtualizedContainerService.HintSize>1794,4150</sap:VirtualizedContainerService.HintSize>
+  <sap2010:WorkflowViewState.IdRef>ProcessTransaction_1</sap2010:WorkflowViewState.IdRef>
+  <TextExpression.NamespacesForImplementation>
+    <scg:List x:TypeArguments="x:String" Capacity="82">
+      <x:String>GlobalConstantsNamespace</x:String>
+      <x:String>GlobalVariablesNamespace</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>Microsoft.VisualBasic.CompilerServices</x:String>
+      <x:String>Newtonsoft.Json</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>System.ComponentModel</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Reflection</x:String>
+      <x:String>System.Runtime.InteropServices</x:String>
+      <x:String>System.Runtime.Serialization</x:String>
+      <x:String>System.Security</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>System.Xml.Serialization</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>UiPath.DataTableUtilities</x:String>
+      <x:String>UiPath.GSuite</x:String>
+      <x:String>UiPath.GSuite.Activities</x:String>
+      <x:String>UiPath.GSuite.Activities.Contracts</x:String>
+      <x:String>UiPath.GSuite.Activities.Enums</x:String>
+      <x:String>UiPath.GSuite.Activities.Sheets</x:String>
+      <x:String>UiPath.GSuite.Contracts</x:String>
+      <x:String>UiPath.Shared.Activities</x:String>
+      <x:String>UiPath.Shared.Activities.ConnectionService.Contracts</x:String>
+      <x:String>System.Activities.Runtime.Collections</x:String>
+    </scg:List>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <sco:Collection x:TypeArguments="AssemblyReference">
+      <AssemblyReference>Microsoft.Bcl.AsyncInterfaces</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>Newtonsoft.Json</AssemblyReference>
+      <AssemblyReference>PresentationCore</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>System.Collections</AssemblyReference>
+      <AssemblyReference>System.Collections.Immutable</AssemblyReference>
+      <AssemblyReference>System.ComponentModel</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Composition</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.TypeConverter</AssemblyReference>
+      <AssemblyReference>System.Configuration.ConfigurationManager</AssemblyReference>
+      <AssemblyReference>System.Console</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.Data.Common</AssemblyReference>
+      <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
+      <AssemblyReference>System.Data.SqlClient</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Linq</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>System.ObjectModel</AssemblyReference>
+      <AssemblyReference>System.Private.CoreLib</AssemblyReference>
+      <AssemblyReference>System.Private.Uri</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization</AssemblyReference>
+      <AssemblyReference>System.Security.Permissions</AssemblyReference>
+      <AssemblyReference>System.ServiceModel</AssemblyReference>
+      <AssemblyReference>System.ValueTuple</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>UiPath.Excel</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.GSuite</AssemblyReference>
+      <AssemblyReference>UiPath.GSuite.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.GSuite.Activities.Design</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Activities.Design</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Core</AssemblyReference>
+      <AssemblyReference>UiPath.Studio.Constants</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
+      <AssemblyReference>UiPath.Workflow</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.EventBasedAsync</AssemblyReference>
+      <AssemblyReference>Microsoft.Win32.Primitives</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Primitives</AssemblyReference>
+      <AssemblyReference>System.Private.Xml</AssemblyReference>
+    </sco:Collection>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence sap2010:Annotation.AnnotationText="Invoke major steps of the business process, which are usually implemented by multiple subworkflows.&#xA;&#xA;If a BusinessRuleException is thrown, the transaction is skipped. &#xA;If another kind of exception occurs, the current transaction can be retried. " DisplayName="Process" sap:VirtualizedContainerService.HintSize="824,4085" sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <Sequence.Variables>
+      <Variable x:TypeArguments="sd:DataTable" Name="dt_OpenQuotes" />
+      <Variable x:TypeArguments="x:Int32" Name="OriginalRowIndex" />
+      <Variable x:TypeArguments="sd:DataTable" Default="[new DataTable]" Name="dt_StatusColumn" />
+      <Variable x:TypeArguments="x:String" Name="RcnDtSerialized" />
+      <Variable x:TypeArguments="sd:DataTable" Name="ManuallyCompletedDT" />
+      <Variable x:TypeArguments="scg:HashSet(x:String)" Default="[new HashSet(of String)]" Name="RcnIdsUniqueList" />
+      <Variable x:TypeArguments="sd:DataTable" Default="[new DataTable]" Name="AttemptedDT" />
+      <Variable x:TypeArguments="x:String" Name="AttemptedDtSerialized" />
+      <Variable x:TypeArguments="x:Boolean" Name="IsAttempted" />
+      <Variable x:TypeArguments="x:Boolean" Name="IsManuallyCompleted" />
+      <Variable x:TypeArguments="sd:DataTable" Default="[new DataTable]" Name="FalseDT" />
+      <Variable x:TypeArguments="x:String" Name="ColumnToUpdateLetter" />
+    </Sequence.Variables>
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+        <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <uga:GSuiteApplicationScope Account="{x:Null}" ApiKey="{x:Null}" ContinueOnError="{x:Null}" CredentialID="{x:Null}" CredentialSecret="{x:Null}" Folder="{x:Null}" Password="{x:Null}" SecureCredentialSecret="{x:Null}" TimeoutMS="{x:Null}" UserEmail="{x:Null}" AuthenticationType="ServiceAccountKey" DataStoreLocation="Local disk" DisplayName="GSuite Application Scope 'Payment Chasing'" HasDomainWideAccesss="False" sap:VirtualizedContainerService.HintSize="762,3902" sap2010:WorkflowViewState.IdRef="GSuiteApplicationScope_1" KeyPath="[in_Config(&quot;GSuiteJson_Path&quot;).ToString]" KeyType="JSON" OAuthClient="UiPath" ServiceAccountEmail="[in_Config(&quot;GSuite_ServiceAccountEmail&quot;).ToString]" Services="Unselected">
+      <uga:GSuiteApplicationScope.AuthenticationScopes>
+        <scg:List x:TypeArguments="InArgument(x:String)" Capacity="8">
+          <InArgument x:TypeArguments="x:String">https://www.googleapis.com/auth/spreadsheets</InArgument>
+        </scg:List>
+      </uga:GSuiteApplicationScope.AuthenticationScopes>
+      <uga:GSuiteApplicationScope.Body>
+        <ActivityAction x:TypeArguments="ug:SimpleObjectContainer">
+          <ActivityAction.Argument>
+            <DelegateInArgument x:TypeArguments="ug:SimpleObjectContainer" Name="GSuiteScope" />
+          </ActivityAction.Argument>
+          <Sequence DisplayName="Process 'Payment Chasing Queue'" sap:VirtualizedContainerService.HintSize="728,3817" sap2010:WorkflowViewState.IdRef="Sequence_3">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <uga:ReadRange ContinueOnError="{x:Null}" GoogleSpreadsheet="{x:Null}" Range="{x:Null}" AuthScopesInvalid="False" DisplayName="Read Range PaymentChasing_GLog_SheetID" sap:VirtualizedContainerService.HintSize="686,25" sap2010:WorkflowViewState.IdRef="ReadRange_1" IncludeHeaders="True" Result="[dt_OpenQuotes]" SheetName="[in_Config(&quot;QueueSheetName&quot;).ToString]" SpreadsheetId="[in_Config(&quot;GSheetID&quot;).ToString]" />
+            <Assign sap:VirtualizedContainerService.HintSize="686,82" sap2010:WorkflowViewState.IdRef="Assign_37">
+              <Assign.To>
+                <OutArgument x:TypeArguments="sd:DataTable">[dt_StatusColumn]</OutArgument>
+              </Assign.To>
+              <Assign.Value>
+                <InArgument x:TypeArguments="sd:DataTable">[dt_OpenQuotes.DefaultView.ToTable(FALSE, "Bot Chase Status")]</InArgument>
+              </Assign.Value>
+            </Assign>
+            <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DataTable="[dt_OpenQuotes]" DisplayName="For Each Row in OpenQuotesDT" sap:VirtualizedContainerService.HintSize="686,3542" sap2010:WorkflowViewState.IdRef="ForEachRow_10">
+              <ui:ForEachRow.Body>
+                <ActivityAction x:TypeArguments="sd:DataRow">
+                  <ActivityAction.Argument>
+                    <DelegateInArgument x:TypeArguments="sd:DataRow" Name="CurrentRow" />
+                  </ActivityAction.Argument>
+                  <Sequence sap:VirtualizedContainerService.HintSize="652,3422" sap2010:WorkflowViewState.IdRef="Sequence_72">
+                    <Sequence.Variables>
+                      <Variable x:TypeArguments="x:Int32" Name="int_CurrentRowIndex" />
+                    </Sequence.Variables>
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                    <Assign DisplayName="Get Current Row Index" sap:VirtualizedContainerService.HintSize="590,82" sap2010:WorkflowViewState.IdRef="Assign_38">
+                      <Assign.To>
+                        <OutArgument x:TypeArguments="x:Int32">[int_CurrentRowIndex]</OutArgument>
+                      </Assign.To>
+                      <Assign.Value>
+                        <InArgument x:TypeArguments="x:Int32">[dt_OpenQuotes.rows.IndexOf(CurrentRow)]</InArgument>
+                      </Assign.Value>
+                    </Assign>
+                    <If Condition="[Not (String.IsNullOrEmpty(CurrentRow(&quot;UiPath Id&quot;).ToString) AndAlso (CurrentRow(&quot;Bot Chase&quot;).ToString.Equals(&quot;TRUE&quot;) Or CurrentRow(&quot;Manual Chase&quot;).ToString.Equals(&quot;TRUE&quot;)))]" DisplayName="Continue If Not Unexecuted Bot or Manual Chase" sap:VirtualizedContainerService.HintSize="590,295" sap2010:WorkflowViewState.IdRef="If_37">
+                      <If.Then>
+                        <Sequence sap:VirtualizedContainerService.HintSize="376,113" sap2010:WorkflowViewState.IdRef="Sequence_70">
+                          <sap:WorkflowViewStateService.ViewState>
+                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                            </scg:Dictionary>
+                          </sap:WorkflowViewStateService.ViewState>
+                          <ui:Continue sap:VirtualizedContainerService.HintSize="334,25" sap2010:WorkflowViewState.IdRef="Continue_1" />
+                        </Sequence>
+                      </If.Then>
+                      <If.Else>
+                        <Sequence sap2010:WorkflowViewState.IdRef="Sequence_71" />
+                      </If.Else>
+                    </If>
+                    <If Condition="[String.IsNullOrEmpty(CurrentRow(&quot;Synch Id&quot;).ToString) Or String.IsNullOrEmpty(CurrentRow(&quot;Project Title&quot;).ToString) Or String.IsNullOrEmpty(CurrentRow(&quot;Clearance Contact&quot;).ToString)]" DisplayName="Log If Mandatory Fields Are Missing" sap:VirtualizedContainerService.HintSize="590,659" sap2010:WorkflowViewState.IdRef="If_38">
+                      <If.Then>
+                        <Sequence sap:VirtualizedContainerService.HintSize="476,477" sap2010:WorkflowViewState.IdRef="Sequence_73">
+                          <sap:WorkflowViewStateService.ViewState>
+                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                            </scg:Dictionary>
+                          </sap:WorkflowViewStateService.ViewState>
+                          <ui:LogMessage DisplayName="Log Missing Fields Detected" sap:VirtualizedContainerService.HintSize="434,92" sap2010:WorkflowViewState.IdRef="LogMessage_15" Level="Info" Message="[&quot;Missing fields detected in row &quot; + (int_CurrentRowIndex + 2).ToString]" />
+                          <ui:UpdateRowItem ColumnName="{x:Null}" ColumnIndex="0" DisplayName="Update Status Column" sap:VirtualizedContainerService.HintSize="434,192" sap2010:WorkflowViewState.IdRef="UpdateRowItem_1" Row="[dt_StatusColumn.Rows(int_CurrentRowIndex)]" Value="[&quot;Failed: Missing mandatory field(s) (Synch Id, Project Title, Clearance Contact)&quot;]" />
+                          <ui:Continue sap:VirtualizedContainerService.HintSize="434,25" sap2010:WorkflowViewState.IdRef="Continue_2" />
+                        </Sequence>
+                      </If.Then>
+                      <If.Else>
+                        <Sequence sap2010:WorkflowViewState.IdRef="Sequence_74" />
+                      </If.Else>
+                    </If>
+                    <If Condition="[Not String.IsNullOrEmpty(CurrentRow(&quot;Synch ID&quot;).ToString) AndAlso string.IsNullOrEmpty(CurrentRow(&quot;UiPath ID&quot;).ToString) AndAlso (CurrentRow(&quot;Bot Chase&quot;).ToString.Equals(&quot;TRUE&quot;) OR CurrentRow(&quot;Manual Chase&quot;).ToString.Equals(&quot;TRUE&quot;))]" DisplayName="If no mandatory fields are empty and Chase=TRUE and no UiPath ID" sap:VirtualizedContainerService.HintSize="590,2155" sap2010:WorkflowViewState.IdRef="If_35">
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                      <If.Then>
+                        <If Condition="[Not String.IsNullOrEmpty(CurrentRow(&quot;Payee Contact (email address)&quot;).ToString) Or Not String.IsNullOrEmpty(CurrentRow(&quot;Licensee Contact (email address)&quot;).ToString)]" DisplayName="If at least a main contact is filled" sap:VirtualizedContainerService.HintSize="556,1973" sap2010:WorkflowViewState.IdRef="If_36">
+                          <If.Then>
+                            <Sequence DisplayName="Add UiPath ID &amp; Status and add to queue" sap:VirtualizedContainerService.HintSize="522,1678" sap2010:WorkflowViewState.IdRef="Sequence_65">
+                              <sap:WorkflowViewStateService.ViewState>
+                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                </scg:Dictionary>
+                              </sap:WorkflowViewStateService.ViewState>
+                              <Assign DisplayName="Assign CurrentRow(&quot;UiPath ID&quot;)" sap:VirtualizedContainerService.HintSize="480,82" sap2010:WorkflowViewState.IdRef="Assign_36">
+                                <Assign.To>
+                                  <OutArgument x:TypeArguments="x:Object">[CurrentRow("UiPath ID")]</OutArgument>
+                                </Assign.To>
+                                <Assign.Value>
+                                  <InArgument x:TypeArguments="x:Object">[If(String.IsNullOrEmpty(CurrentRow("Invoice Number").ToString), CurrentRow("Synch ID").ToString, CurrentRow("Invoice Number").ToString)+"_"+Now.ToString("ddMMyyyy_HHmmss")]</InArgument>
+                                </Assign.Value>
+                              </Assign>
+                              <ui:RetryScope DisplayName="Retry Scope" sap:VirtualizedContainerService.HintSize="480,463" sap2010:WorkflowViewState.IdRef="RetryScope_9" NumberOfRetries="5" RetryInterval="00:00:01">
+                                <ui:RetryScope.ActivityBody>
+                                  <ActivityAction>
+                                    <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="438,288" sap2010:WorkflowViewState.IdRef="TryCatch_1">
+                                      <sap:WorkflowViewStateService.ViewState>
+                                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                        </scg:Dictionary>
+                                      </sap:WorkflowViewStateService.ViewState>
+                                      <TryCatch.Try>
+                                        <uga:WriteCell ContinueOnError="{x:Null}" GoogleSpreadsheet="{x:Null}" Request="{x:Null}" AuthScopesInvalid="False" Cell="[ColumnToUpdateLetter+(dt_OpenQuotes.rows.IndexOf(CurrentRow)+2).tostring]" DisplayName="Write Cell UiPathID" sap:VirtualizedContainerService.HintSize="334,25" sap2010:WorkflowViewState.IdRef="WriteCell_5" IsInsideBatchUpdateScope="False" SheetName="[in_Config(&quot;PaymentChasing_GQueue_SheetName&quot;).ToString]" SpreadsheetId="[in_Config(&quot;PaymentChasing_GLog_SheetID&quot;).ToString]" Value="[CurrentRow(&quot;UiPath ID&quot;).ToString]" />
+                                      </TryCatch.Try>
+                                      <TryCatch.Catches>
+                                        <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="404,21" sap2010:WorkflowViewState.IdRef="Catch`1_1">
+                                          <sap:WorkflowViewStateService.ViewState>
+                                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                              <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                              <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                            </scg:Dictionary>
+                                          </sap:WorkflowViewStateService.ViewState>
+                                          <ActivityAction x:TypeArguments="s:Exception">
+                                            <ActivityAction.Argument>
+                                              <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
+                                            </ActivityAction.Argument>
+                                            <Sequence sap:VirtualizedContainerService.HintSize="450,398" sap2010:WorkflowViewState.IdRef="Sequence_67">
+                                              <sap:WorkflowViewStateService.ViewState>
+                                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                </scg:Dictionary>
+                                              </sap:WorkflowViewStateService.ViewState>
+                                              <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="388,92" sap2010:WorkflowViewState.IdRef="LogMessage_13" Level="Warn" Message="[&quot;Google quota reached: &quot;+exception.Message]" />
+                                              <Delay DisplayName="Delay 1 min" Duration="00:01:00" sap:VirtualizedContainerService.HintSize="388,90" sap2010:WorkflowViewState.IdRef="Delay_6" />
+                                              <Rethrow sap:VirtualizedContainerService.HintSize="388,25" sap2010:WorkflowViewState.IdRef="Rethrow_1" />
+                                            </Sequence>
+                                          </ActivityAction>
+                                        </Catch>
+                                      </TryCatch.Catches>
+                                    </TryCatch>
+                                  </ActivityAction>
+                                </ui:RetryScope.ActivityBody>
+                                <ui:RetryScope.Condition>
+                                  <ActivityFunc x:TypeArguments="x:Boolean" />
+                                </ui:RetryScope.Condition>
+                              </ui:RetryScope>
+                              <ui:RetryScope DisplayName="Retry Scope" sap:VirtualizedContainerService.HintSize="480,463" sap2010:WorkflowViewState.IdRef="RetryScope_10" NumberOfRetries="5" RetryInterval="00:00:01">
+                                <ui:RetryScope.ActivityBody>
+                                  <ActivityAction>
+                                    <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="438,288" sap2010:WorkflowViewState.IdRef="TryCatch_2">
+                                      <sap:WorkflowViewStateService.ViewState>
+                                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                        </scg:Dictionary>
+                                      </sap:WorkflowViewStateService.ViewState>
+                                      <TryCatch.Try>
+                                        <uga:WriteCell ContinueOnError="{x:Null}" GoogleSpreadsheet="{x:Null}" Request="{x:Null}" AuthScopesInvalid="False" Cell="[ColumnToUpdateLetter+(dt_OpenQuotes.rows.IndexOf(CurrentRow)+2).tostring]" DisplayName="Write Cell Status" sap:VirtualizedContainerService.HintSize="334,25" sap2010:WorkflowViewState.IdRef="WriteCell_6" IsInsideBatchUpdateScope="False" SheetName="[in_Config(&quot;PaymentChasing_GQueue_SheetName&quot;).ToString]" SpreadsheetId="[in_Config(&quot;PaymentChasing_GLog_SheetID&quot;).ToString]" Value="In Progress" />
+                                      </TryCatch.Try>
+                                      <TryCatch.Catches>
+                                        <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="404,21" sap2010:WorkflowViewState.IdRef="Catch`1_2">
+                                          <sap:WorkflowViewStateService.ViewState>
+                                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                              <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                              <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                            </scg:Dictionary>
+                                          </sap:WorkflowViewStateService.ViewState>
+                                          <ActivityAction x:TypeArguments="s:Exception">
+                                            <ActivityAction.Argument>
+                                              <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
+                                            </ActivityAction.Argument>
+                                            <Sequence sap:VirtualizedContainerService.HintSize="450,333" sap2010:WorkflowViewState.IdRef="Sequence_68">
+                                              <sap:WorkflowViewStateService.ViewState>
+                                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                </scg:Dictionary>
+                                              </sap:WorkflowViewStateService.ViewState>
+                                              <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="388,92" sap2010:WorkflowViewState.IdRef="LogMessage_14" Level="Warn" Message="[&quot;Google quota reached: &quot;+exception.Message]" />
+                                              <Delay DisplayName="Delay 1 min" Duration="00:01:00" sap:VirtualizedContainerService.HintSize="388,90" sap2010:WorkflowViewState.IdRef="Delay_7" />
+                                              <Rethrow sap:VirtualizedContainerService.HintSize="388,25" sap2010:WorkflowViewState.IdRef="Rethrow_2" />
+                                            </Sequence>
+                                          </ActivityAction>
+                                        </Catch>
+                                      </TryCatch.Catches>
+                                    </TryCatch>
+                                  </ActivityAction>
+                                </ui:RetryScope.ActivityBody>
+                                <ui:RetryScope.Condition>
+                                  <ActivityFunc x:TypeArguments="x:Boolean" />
+                                </ui:RetryScope.Condition>
+                              </ui:RetryScope>
+                              <Delay DisplayName="Delay 3sec to prevent GSheet error" Duration="00:00:03" sap:VirtualizedContainerService.HintSize="480,90" sap2010:WorkflowViewState.IdRef="Delay_5" />
+                              <ui:RetryScope DisplayName="Retry Scope Add Queue Item" sap:VirtualizedContainerService.HintSize="480,200" sap2010:WorkflowViewState.IdRef="RetryScope_8" NumberOfRetries="3" RetryInterval="00:00:03">
+                                <ui:RetryScope.ActivityBody>
+                                  <ActivityAction>
+                                    <ui:AddQueueItem ServiceBaseAddress="{x:Null}" TimeoutMS="{x:Null}" DisplayName="Add Queue Item" sap:VirtualizedContainerService.HintSize="334,25" sap2010:WorkflowViewState.IdRef="AddQueueItem_9" Priority="Normal" QueueType="[in_Config(&quot;OrchestratorQueueName&quot;).ToString]" Reference="[CurrentRow(&quot;UiPath ID&quot;).ToString]">
+                                      <ui:AddQueueItem.ItemInformation>
+                                        <InArgument x:TypeArguments="x:String" x:Key="Synch ID">[CurrentRow("Synch ID").ToString]</InArgument>
+                                        <InArgument x:TypeArguments="x:String" x:Key="Invoice Number">[CurrentRow("Invoice Number").ToString]</InArgument>
+                                        <InArgument x:TypeArguments="x:String" x:Key="Project Title">[CurrentRow("Project Title").ToString]</InArgument>
+                                        <InArgument x:TypeArguments="x:String" x:Key="Work(s) Confirmed Used Only">[CurrentRow("Work(s) Confirmed Used Only").ToString]</InArgument>
+                                        <InArgument x:TypeArguments="x:String" x:Key="Recording(s) Confirmed Used Only">[CurrentRow("Recording(s) Confirmed Used Only").ToString]</InArgument>
+                                        <InArgument x:TypeArguments="x:String" x:Key="Kobalt Fee (Pro-Rata in USD)">[CurrentRow("Kobalt Fee (Pro-Rata in USD)").ToString]</InArgument>
+                                        <InArgument x:TypeArguments="x:String" x:Key="Kobalt Fee (Pro-Rata in Local Currency)">[CurrentRow("Kobalt Fee (Pro-Rata in Local Currency)").ToString]</InArgument>
+                                        <InArgument x:TypeArguments="x:String" x:Key="Currency">[CurrentRow("Currency").ToString]</InArgument>
+                                        <InArgument x:TypeArguments="x:String" x:Key="Invoice Issued Date">[CurrentRow("Invoice Issued Date").ToString]</InArgument>
+                                        <InArgument x:TypeArguments="x:String" x:Key="Days Outstanding">[CurrentRow("Days Outstanding").ToString]</InArgument>
+                                        <InArgument x:TypeArguments="x:String" x:Key="Territory of Licensee">[CurrentRow("Territory of Licensee").ToString]</InArgument>
+                                        <InArgument x:TypeArguments="x:String" x:Key="Email Account (US or UK)">[CurrentRow("Email Account (US or UK)").ToString]</InArgument>
+                                        <InArgument x:TypeArguments="x:String" x:Key="Chase Category">[CurrentRow("Chase Category").ToString]</InArgument>
+                                        <InArgument x:TypeArguments="x:String" x:Key="Chase Count (with most recent chase date)">[CurrentRow("Chase Count (with most recent chase date)").ToString]</InArgument>
+                                        <InArgument x:TypeArguments="x:String" x:Key="Custom Message (if desired)">[CurrentRow("Custom Message (if desired)").ToString]</InArgument>
+                                        <InArgument x:TypeArguments="x:String" x:Key="Payee Contact (email address)">[CurrentRow("Payee Contact (email address)").ToString]</InArgument>
+                                        <InArgument x:TypeArguments="x:String" x:Key="Licensee Contact (email address)">[CurrentRow("Licensee Contact (email address)").ToString]</InArgument>
+                                        <InArgument x:TypeArguments="x:String" x:Key="Negotiator (email address)">[CurrentRow("Negotiator (email address)").ToString]</InArgument>
+                                        <InArgument x:TypeArguments="x:String" x:Key="Owner (email address)">[CurrentRow("Owner (email address)").ToString]</InArgument>
+                                        <InArgument x:TypeArguments="x:String" x:Key="Procurer (email address)">[CurrentRow("Procurer (email address)").ToString]</InArgument>
+                                        <InArgument x:TypeArguments="x:String" x:Key="Additional Contacts (email address)">[CurrentRow("Additional Contacts (email address)").ToString]</InArgument>
+                                      </ui:AddQueueItem.ItemInformation>
+                                    </ui:AddQueueItem>
+                                  </ActivityAction>
+                                </ui:RetryScope.ActivityBody>
+                                <ui:RetryScope.Condition>
+                                  <ActivityFunc x:TypeArguments="x:Boolean" />
+                                </ui:RetryScope.Condition>
+                              </ui:RetryScope>
+                              <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="480,92" sap2010:WorkflowViewState.IdRef="LogMessage_12" Level="Info" Message="[CurrentRow(&quot;UiPath ID&quot;).ToString +&quot;: added to the queue&quot;]" />
+                            </Sequence>
+                          </If.Then>
+                          <If.Else>
+                            <Sequence DisplayName="Add invalid status" sap:VirtualizedContainerService.HintSize="376,113" sap2010:WorkflowViewState.IdRef="Sequence_66">
+                              <sap:WorkflowViewStateService.ViewState>
+                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                </scg:Dictionary>
+                              </sap:WorkflowViewStateService.ViewState>
+                              <uga:WriteCell ContinueOnError="{x:Null}" GoogleSpreadsheet="{x:Null}" Request="{x:Null}" AuthScopesInvalid="False" Cell="[ColumnToUpdateLetter+(dt_OpenQuotes.rows.IndexOf(CurrentRow)+2).tostring]" DisplayName="Write Cell Status" sap:VirtualizedContainerService.HintSize="334,25" sap2010:WorkflowViewState.IdRef="WriteCell_7" IsInsideBatchUpdateScope="False" SheetName="[in_Config(&quot;PaymentChasing_GQueue_SheetName&quot;).ToString]" SpreadsheetId="[in_Config(&quot;PaymentChasing_GLog_SheetID&quot;).ToString]" Value="Failed - Missing Payee/Licensee contacts" />
+                            </Sequence>
+                          </If.Else>
+                        </If>
+                      </If.Then>
+                      <If.Else>
+                        <Sequence DisplayName="" sap2010:WorkflowViewState.IdRef="Sequence_69" />
+                      </If.Else>
+                    </If>
+                  </Sequence>
+                </ActivityAction>
+              </ui:ForEachRow.Body>
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+            </ui:ForEachRow>
+          </Sequence>
+        </ActivityAction>
+      </uga:GSuiteApplicationScope.Body>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+    </uga:GSuiteApplicationScope>
+  </Sequence>
+</Activity>
